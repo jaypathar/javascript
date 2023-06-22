@@ -9,10 +9,52 @@
 
 <body>
     <script>
-        const friends = ['Micheal', 'Steven', 'Peter'];
 
-        friends.push('Jay');
-        console.log(friends)    
+        //Arrays
+        const a = ['Micheal', 'Steven', 'Peter'];
+
+        a.push('Jay')//add element at end
+        a.unshift('John')//add elements at start
+        a.pop()//removes last element in the array
+        a.shift()//Removes element at the start of  arrray
+        console.log(a.indexOf('Steven'))
+        console.log(a.includes('Steven'))
+
+        //Set
+        let nums = new Set();
+        nums.add(3);
+        nums.add(4);
+        nums.add(5);
+        nums.add(3)
+        nums.delete(3)
+        console.log(nums)
+
+
+        nums.clear()//clears the set
+        //nums.size()//returns the length of the set
+
+        console.log(nums.has(3))//checks if the element is available or not
+
+        //Map
+        let map = new Map();
+
+        map.set("Navin", "Java")
+        map.set("Jay", "Machine Learning")
+        map.set("Aum", "Maths")
+
+        console.log(map.keys())//returns the list of keys
+        console.log(map.has('Jay'))//checks if it is a key
+        console.log(map.get("Jay"))//getting a value based on key
+
+        for (let [k, v] of map) {
+            console.log(k, ":", v)
+        }
+
+        map.forEach((k, v) => {
+            console.log(k, ":", v)
+        })
+
+
     </script>
 </body>
 
