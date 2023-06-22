@@ -9,10 +9,18 @@
 
 <body>
     <script>
-        for (let rep = 1; rep <= 10; rep++) {
-            if (rep == 5) break
-            console.log(`Lifting Weights repetition ${rep}`)
+        let rep = 1;
+        while (rep <= 10) {
+            console.log(`This is ${rep}`)
+            rep++
         }
+
+        let dice = Math.trunc((Math.random() * 6)) + 1
+        while (dice !== 6) {
+            console.log(`you rolled ${dice}`)
+            let dice = Math.trunc((Math.random() * 6)) + 1
+        }
+        console.log("hello")
     </script>
 </body>
 
