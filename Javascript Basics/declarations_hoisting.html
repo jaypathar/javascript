@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarations/hoisting/variable scopes/shadowing</title>
+</head>
+
+<body>
+    <script>
+        //let,var  are used to decalre variables and objects
+        //const are immutable
+        var a = 5;
+        let b = 4;
+        const c = {
+            name: "jay",
+            age: 20
+        }
+        let y = "Pathar"
+        alert(a - b)
+        alert(c.name)
+        alert(y)
+
+        //Hoisting: The process of  internally shifting all decalarations(variable or function) towards the top is called hoisting (before the  interpretation starts.)
+
+        hello();
+        function hello() {
+            console.log("Hello")
+        }
+
+        'use strict'
+        console.log(x);
+        let x;
+        x = 7;
+
+        //shadowing
+
+        let z = 100;
+        {
+            let z = 10;
+            console.log(z)
+        }
+        console.log(z)
+
+    </script>
+</body>
+
+</html>
