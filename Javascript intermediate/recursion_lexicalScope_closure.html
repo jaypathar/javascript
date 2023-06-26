@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recusion_LecicalScope_Closure</title>
+</head>
+
+<body>
+    <script>
+        //Recursion
+        // let num = 1;
+        // function show() {
+        //     console.log('Hi', num);
+        //     num++;
+        //     show();
+        // }
+        // show();
+        //Factorial Program
+        // function fact(n) {
+        //     if (n == 0) {
+        //         return 1
+        //     } else {
+        //         return n * fact(n - 1);
+        //     }
+
+        // }
+        // console.log(fact(prompt("Enter a number: ")))
+
+        //Lexical Scope: Code in one scope can access variables in same scope or any scope outside of it.
+        //Closure : The inner function can have access to outer function variables and global variables.
+        function outerFunc(a) {
+            let b = 10;
+            function innerFunc() {
+                let sum = a + b;
+                console.log(`The sum of two numbers is  ${sum}.`)
+            }
+            innerFunc();
+        }
+        outerFunc(5);
+    </script>
+</body>
+
+</html>
