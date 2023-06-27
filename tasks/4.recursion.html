@@ -8,10 +8,11 @@
 
   <body>
     <script>
-      //Recursion
-      //Factorial Program:
-
-      // To Do's: ......
+      /**
+       *
+       * Lexical Scope: Code in one scope can access variables in same scope or any scope outside of it.
+       * Closure : The inner function can have access to outer function variables and global variables.
+       */
 
       function fact(num) {
         //passing factorial number to be found as parameter
@@ -23,14 +24,9 @@
       console.log("The factorial is :", fact(prompt("Enter a number: "))); //Calling fact() + prompt() to enter a value
 
       /**
-       * Lexical Scope: Code in one scope can access variables in same scope or any scope outside of it.
-       * Closure : The inner function can have access to outer function variables and global variables.
-       */
-      /**
        *
        * The follwing function  helps understand closure .
        **/
-
       function outerFunc(num1) {
         let num2 = 10;
         function innerFunc() {
