@@ -11,5 +11,7 @@ const start = async ()=>{
         app.listen(PORT,()=>{
             console.log(`I am live on port ${PORT}`)
         })
-    }catch (error){}
+    }catch (error){
+       console.error(error)
+    }
 }
