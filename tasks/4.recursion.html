@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recusion_LecicalScope_Closure</title>
   </head>
-
   <body>
     <script>
       /**
@@ -14,8 +13,10 @@
        * Closure : The inner function can have access to outer function variables and global variables.
        */
 
+      /**
+       * The following function calculates the factorial of a number by passing number as parameter.
+       **/
       function fact(num) {
-        //passing factorial number to be found as parameter
         if (num == 0) {
           return 1; //0! = 1
         }
@@ -37,7 +38,9 @@
       }
       outerFunc(5); //outer function call with parameters
 
-      //Write a JavaScript function that accepts a parameter and uses let to declare a variable inside the function.
+      /**
+       * Write a JavaScript function that accepts a parameter and uses let to declare a variable inside the function.
+       **/
       function add(input1, input2) {
         //passing two parameters as input.
         let a = input1; //storing the two variables.
