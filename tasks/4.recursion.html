@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recusion_LecicalScope_Closure</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <script>
-        //Recursion
-        // let num = 1;
-        // function show() {
-        //     console.log('Hi', num);
-        //     num++;
-        //     show();
-        // }
-        // show();
-        //Factorial Program:
-        // function fact(n) {
-        //     if (n == 0) {
-        //         return 1
-        //     } else {
-        //         return n * fact(n - 1);
-        //     }
+      /**
+       *
+       * Lexical Scope: Code in one scope can access variables in same scope or any scope outside of it.
+       * Closure : The inner function can have access to outer function variables and global variables.
+       */
 
-        // }
-        // console.log(fact(prompt("Enter a number: ")))
-
-        //Lexical Scope: Code in one scope can access variables in same scope or any scope outside of it.
-        //Closure : The inner function can have access to outer function variables and global variables.
-        // function outerFunc(a) {
-        //     let b = 10;
-        //     function innerFunc() {
-        //         let sum = a + b;
-        //         console.log(`The sum of two numbers is  ${sum}.`)
-        //     }
-        //     innerFunc();
-        // }
-        // outerFunc(5);
-
-
-        //Write a JavaScript function that accepts a parameter and uses let to declare a variable inside the function.
-        function add(x, y) {
-            let a = x;
-            let b = y;
-            return a + b;
+      /**
+       * The following function calculates the factorial of a number by passing number as parameter.
+       **/
+      function fact(num) {
+        if (num == 0) {
+          return 1; //0! = 1
         }
-        console.log(`The addition of two numbers is: `, add(5, 2))
-    </script>
-</body>
+        return num * fact(num - 1);
+      }
+      console.log("The factorial is :", fact(prompt("Enter a number: "))); //Calling fact() + prompt() to enter a value
 
+      /**
+       *
+       * The follwing function  helps understand closure .
+       **/
+      function outerFunc(num1) {
+        let num2 = 10;
+        function innerFunc() {
+          let sum = num1 + num2;
+          console.log(`Closure: The sum of two numbers is  ${sum}.`);
+        }
+        innerFunc(); //Inner Function call
+      }
+      outerFunc(5); //outer function call with parameters
+
+      /**
+       * Write a JavaScript function that accepts a parameter and uses let to declare a variable inside the function.
+       **/
+      function add(num1, num2) {
+        //passing two parameters as input.
+        let input1 = num1; //storing the two variables.
+        let input2 = num2;
+        return input1 + input2; //returning addition of the numbers.
+      }
+      console.log(`The addition of two numbers is: `, add(5, 2)); //function call and  Displaying message
+    </script>
+  </body>
 </html>
