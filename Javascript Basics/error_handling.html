@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Types of error and error handling.</title>
+  </head>
+  <body>
+    <script>
+      /**
+        *There are diffrent types of  errors in javascipt.
+        Syntax:Missing Semicolon or any miistakes that are not within the rules of syntax.
+        logical: errors in the logic of program i.e: 2+2 = 5
+        runtime: occurwhen something  goes wrong at runtime i.e not enough disk space etc.
+        reference: trying to use a variable which is not decalred
+        type_error: trying to apply math function to a string i.e. toFixed()
+        Similarly error handling can be done using the try-catch block as shown below.
+         **/
+
+      //->whenever an error occurs and  error object is created which has a error name and error message.
+      //Exception handling: try,catch,finally,throw
+      try {
+        document.write("hello<br>");
+        document.writing("hello"); //There is no function called 'document.writing()'
+      } catch (e) {
+        //If there are no issues in the try block,  the catch block won't be executed
+        document.write("the error name is " + e.name + "<br>");
+        document.write("<br>");
+        document.write("The error message is " + e.message + "<br>");
+      } finally {
+        //Write code that must run irrespective if the  exception is generated or not.
+        document.write(
+          "This is Excecuted whether execution is is generated or not"
+        );
+      }
+    </script>
+  </body>
+</html>
