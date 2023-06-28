@@ -5,9 +5,9 @@
 # JavaScript topics
 
     - Declarations/hoisting/variable scopes/shadowing
-    -Recusion/LecicalScope/Closure
-    -JavaScript Errors: Syntax errors, Runtime errors, and Logic errors and error handling
-    -Loops and functions in javascript
+    - Recursion/LecicalScope/Closure
+    - JavaScript Errors: Syntax errors, Runtime errors, Logic errors, and error handling
+    - Loops and functions in javascript
 
 # Github process
 
