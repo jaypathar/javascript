@@ -19,7 +19,7 @@
 > Creating a new branch will copy all files from existing branch to **new branch**.
 
     - git branch <branch name>
-    - git checkout <branch name>//To switch to new branch
+    - git checkout <branch name> //To switch to new branch
 
 # Git commands
 
