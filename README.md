@@ -25,8 +25,8 @@
 
     - git status // will return the status of the file(tracked,untracked,ready to commit etc)
     - git add <file name>  // Moves file to staging are making it ready for next commit.
-    -git commit -m "messsage for change" //will save all the files changes locally making it ready to push to remote.
-    -git push //will push all files to remote branch(i.e. github)
+    - git commit -m "message for change" //will save all the file changes locally making it ready to push to remote.
+    - git push //will push all files to remote branch(i.e. GitHub)
 
 # Creating a pull Request
 
