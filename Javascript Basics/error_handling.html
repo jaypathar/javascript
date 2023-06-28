@@ -45,7 +45,7 @@
       try {
         notDefinedFunction(); //calling a not defined function.
       } catch (error) {
-        console.log("Runtime Error:", error.message);
+        console.error("Runtime Error:", error.message);
       } finally {
         console.log("This is the finally block");
       }
