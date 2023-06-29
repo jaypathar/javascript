@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printing Object properties</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Creating an Object and adding properties like name,age,city and defining function getData() and setData() to perform object property manipulation.
+       * 'this' keyword is used to refer to the same object properties and methods.
+       **/
+      const person = {
+        name: "Ram",
+        age: 22,
+        city: "Rajkot",
+        set setData(name) {
+          // inbuilt method defined using set to change this.name .
+          this.name = name;
+        },
+        get getData() {
+          // You can call a method like property using get(inbuilt function)
+          console.log("Name: " + this.name);
+          console.log("Age: " + this.age);
+          console.log("City: " + this.city);
+        },
+      };
+      person.setData = "Jay";
+      person.getData;
+    </script>
+  </body>
+</html>

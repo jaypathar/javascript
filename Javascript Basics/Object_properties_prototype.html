@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Properties and Prototype</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Creating an object person and performing  various operation on it.
+       **/
+      const person = {
+        name: "Ram",
+        age: 22,
+        city: "Rajkot",
+      };
+      person.name = "Jay"; // changes name from 'Ram' to 'Jay'
+      delete person.city; // delete property city
+      console.log("age" in person); // returns true if the property is there in object
+      /**
+       * To print all the properties in the object person(Iterating object).
+       **/
+      for (key in person) {
+        console.log(key + ":" + person[key]);
+      }
+      person.hello = function () {
+        console.log("This is an object method.");
+      };
+      person.hello();
+
+      /**
+       * Object Constructors: Classes were available after ES6,but before that multiple objects having same property key were made using function.
+       * Let's say we have students with property firstName,lastName,age.
+       **/
+      function Student(first, last, age) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+      }
+      let student1 = new Student("Jay", "Pathar", 22);
+      let student2 = new Student("Meet", "Patel", 21);
+      console.log(student1.firstName);
+      /**
+       * Let'say you want to add a property nationality in student
+       * student1.nationality = "Indian" is not allowed in this
+       * Hence prototyping allows you to add methods and properties to Object Constructor.
+       **/
+      Student.prototype.nationality = "Indian"; // The object has been added with a property(nationality)
+      console.log("The nationality of student1: " + student1.nationality);
+    </script>
+  </body>
+</html>
