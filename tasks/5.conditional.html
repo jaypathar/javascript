@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number is positive,negative or zero</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * The following program will prompt for a value which will be store in num
+       **/
+      const num = prompt("Enter a number: ");
+      if (num >= 0) {
+        if (num == 0) {
+          console.log("It is a zero");
+        } else {
+          console.log("It is a positive number");
+        }
+      } else {
+        console.log("It is negative number."); // No condition is met - print negative.
+      }
+    </script>
+  </body>
+</html>
