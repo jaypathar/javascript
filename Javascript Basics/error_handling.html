@@ -8,11 +8,11 @@
   <body>
     <script>
       /**
-        *There are diffrent types of  errors in javascipt.
-        Syntax:Missing Semicolon or any miistakes that are not within the rules of syntax.
+        *There are different types of  errors in javaScript.
+        Syntax:Missing Semicolon or any mistakes that are not within the rules of syntax.
         logical: errors in the logic of program i.e: 2+2 = 5
-        runtime: occurwhen something  goes wrong at runtime i.e not enough disk space etc.
-        reference: trying to use a variable which is not decalred
+        runtime: occur when something  goes wrong at runtime i.e not enough disk space etc.
+        reference: trying to use a variable which is not declared
         type_error: trying to apply math function to a string i.e. toFixed()
         Similarly error handling can be done using the try-catch block as shown below.
       **/
@@ -24,7 +24,7 @@
 
       // Syntax Error
       try {
-        const x = y; //syntax error - undefined variable
+        const var1 = var2; //syntax error - undefined variable
       } catch (error) {
         console.error("Syntax Error: " + error.message);
       }
@@ -36,7 +36,7 @@
         if (denominator === 0) {
           throw new Error("Divide by zero error");
         } else {
-          const result = numerator / denominator; //Dividing numerator by zero - infinity
+          console.log(numerator / denominator); //Dividing numerator by zero - infinity
         }
       } catch (error) {
         console.error("Logical Error: " + error.message);

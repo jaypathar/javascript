@@ -5,7 +5,7 @@
 # JavaScript topics
 
     - Declarations/hoisting/variable scopes/shadowing
-    - Recursion/LecicalScope/Closure
+    - Recursion/LexicalScope/Closure
     - JavaScript Errors: Syntax errors, Runtime errors, Logic errors, and error handling
     - Loops and functions in javascript
 
@@ -33,8 +33,13 @@
 > As soon as you push to remote,on the github page you will find an option to open a **Pull Request (PR)**
 
     - Click on the option to open PR.
-    - You can add a reviewer to review work done.
-    - If you add a reviewer, the person will be notified of the same.
-    - Review suggestions will be made if any and finally, you can merge the branch to the main when approved.
+    - You can add reviewer to review work done.
+    - If you add reviewer,the person will be notified for the same.
+    - Review suggestion will be made if any and finally you can merge the branch to main when approved.
 
-> There will be corresponding changes on the main branch once merged.
+# Code Review Process
+
+    - If you have received suggestions to make change,there may be option to 'commit change' for some changes.
+    - You can commit the changes itself there and take a pull locally.(The changes which were remote will also be made locally).
+    - And that remaining changes can be made locally and then pushed again.
+    - After pushing,you need to reopen the PR for review.
