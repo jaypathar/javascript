@@ -8,30 +8,46 @@
   <body>
     <script>
       /**
-        *There are diffrent types of  errors in javascipt.
-        Syntax:Missing Semicolon or any miistakes that are not within the rules of syntax.
+        *There are different types of  errors in javaScript.
+        Syntax:Missing Semicolon or any mistakes that are not within the rules of syntax.
         logical: errors in the logic of program i.e: 2+2 = 5
-        runtime: occurwhen something  goes wrong at runtime i.e not enough disk space etc.
-        reference: trying to use a variable which is not decalred
+        runtime: occur when something  goes wrong at runtime i.e not enough disk space etc.
+        reference: trying to use a variable which is not declared
         type_error: trying to apply math function to a string i.e. toFixed()
         Similarly error handling can be done using the try-catch block as shown below.
-         **/
+      **/
 
-      //->whenever an error occurs and  error object is created which has a error name and error message.
-      //Exception handling: try,catch,finally,throw
+      /**
+       *  Whenever an error occurs an error object is created which has an error name and error message.
+       *  Exception handling: try, catch, finally, throw
+       **/
+
+      // Syntax Error
       try {
-        document.write("hello<br>");
-        document.writing("hello"); //There is no function called 'document.writing()'
-      } catch (e) {
-        //If there are no issues in the try block,  the catch block won't be executed
-        document.write("the error name is " + e.name + "<br>");
-        document.write("<br>");
-        document.write("The error message is " + e.message + "<br>");
+        const var1 = var2; //syntax error - undefined variable
+      } catch (error) {
+        console.error("Syntax Error: " + error.message);
+      }
+      // TODO: Review logical error
+      // Logical Error
+      try {
+        const numerator = 10;
+        const denominator = 0;
+        if (denominator === 0) {
+          throw new Error("Divide by zero error");
+        } else {
+          console.log(numerator / denominator); //Dividing numerator by zero - infinity
+        }
+      } catch (error) {
+        console.error("Logical Error: " + error.message);
+      }
+      // Runtime Error
+      try {
+        notDefinedFunction(); //calling a not defined function.
+      } catch (error) {
+        console.error("Runtime Error:", error.message);
       } finally {
-        //Write code that must run irrespective if the  exception is generated or not.
-        document.write(
-          "This is Excecuted whether execution is is generated or not"
-        );
+        console.log("This is the finally block");
       }
     </script>
   </body>
