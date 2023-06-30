@@ -8,26 +8,27 @@
   <body>
     <script>
       /**
-       * Creating an object person and performing  various operation on it.
+       *Enclosing an object person within a function and performing  various operation on it.
        **/
-      const person = {
-        name: "Ram",
-        age: 22,
-        city: "Rajkot",
-      };
-      person.name = "Jay"; // changes name from 'Ram' to 'Jay'
-      delete person.city; // delete property city
-      console.log("age" in person); // returns true if the property is there in object
-      /**
-       * To print all the properties in the object person(Iterating object).
-       **/
-      for (key in person) {
-        console.log(key + ":" + person[key]);
+      function manipulatePersonObject() {
+        const person = {
+          name: "Ram",
+          age: 22,
+          city: "Rajkot",
+        };
+        person.name = "Jay"; // changes name from 'Ram' to 'Jay'
+        delete person.city; // delete property city
+        console.log("age" in person); // returns true if the property is there in object
+        //To print all the properties in the object person(Iterating object).
+        for (key in person) {
+          console.log(key + ":" + person[key]);
+        }
+        person.hello = function () {
+          console.log("This is an object method.");
+        };
+        person.hello();
       }
-      person.hello = function () {
-        console.log("This is an object method.");
-      };
-      person.hello();
+      manipulatePersonObject(); //function call
 
       /**
        * Object Constructors: Classes were available after ES6,but before that multiple objects having same property key were made using function.
@@ -41,6 +42,7 @@
       let student1 = new Student("Jay", "Pathar", 22);
       let student2 = new Student("Meet", "Patel", 21);
       console.log(student1.firstName);
+
       /**
        * Let'say you want to add a property nationality in student
        * student1.nationality = "Indian" is not allowed in this
