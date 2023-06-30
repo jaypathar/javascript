@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Functions[</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Function Expression - Assigning a function to a variable.
+       * Note: You cannot call function if it  is not assigned.You need to assign it and then call.(i.e.Hoisting)
+       * Arrow functions are modified version of anonymous function.
+       **/
+
+      /**
+       * If a function is treated like any other value
+       *  - You can assign a function to variable like any other value.
+       *  - You can pass function as argument.
+       *  - you are able to return a function.
+       * Hence, it is called FIRST-CLASS FUNCTION.
+       **/
+
+      function callAllFunctions() {
+        //Function Expression
+        let funcExpression = function () {
+          console.log("This is function expression");
+        };
+
+        //Arrow function
+        let funcArrow = (input1, input2) =>
+          console.log(
+            `This is arrow function and addition = ${input1 + input2}`
+          );
+
+        /**
+         * Function that takes function as an argument or returns a function is called HIGHER ORDER FUNCTION.
+         * i.e setTimeout(),filter(),map(),reduce()
+         * Creating a function that calc() and passing function display() as parameter.
+         * Implementing Callbacks.
+         **/
+        function display(sum) {
+          console.log(`The addition is: ${sum}`);
+        }
+        function calc(num1, num2, callback) {
+          let sum = parseInt(num1) + parseInt(num2);
+          callback(sum);
+        }
+
+        //Returning a Anonymous function - Higher order function
+        function interviewQuestion(job) {
+          switch (job) {
+            case "Teacher":
+              return function (name) {
+                console.log(`What subject do you teach ${name}`);
+              };
+            case "Lawyer":
+              return function (name) {
+                console.log(`${name}, how long have you been practicing ?`);
+              };
+            case "Designer":
+              return function (name) {
+                console.log(`${name} can you please explain UX`);
+              };
+            default:
+              return function (name) {
+                console.log(`How are you ${name}`);
+              };
+          }
+        }
+
+        funcExpression();
+        funcArrow(5, 4);
+        calc(prompt("Enter num1 : "), prompt("Enter num2 : "), display);
+        let question = interviewQuestion("Lawyer");
+        question("Jay");
+      }
+      callAllFunctions();
+    </script>
+  </body>
+</html>
