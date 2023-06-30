@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loops</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <script>
-        let rep = 1;
-        while (rep <= 10) {
-            console.log(`This is ${rep}`)
-            rep++
-        }
+      /**
+       * The following program uses different kinds of loops like for,for/in,for/of,while,do/while.
+       **/
 
-        let dice = Math.trunc((Math.random() * 6)) + 1
-        while (dice !== 6) {
-            console.log(`you rolled ${dice}`)
-            let dice = Math.trunc((Math.random() * 6)) + 1
+      const arr = ["volvo", "BMW", "suzuki", "kia"]; //Declaring an array
+      function print(arr) {
+        console.log("Using for loop"); //Using for
+        for (let element = 0; element < arr.length; element++) {
+          console.log(arr[element]);
         }
-        console.log("hello")
+        console.log("Using for/in loop"); //Using for/in
+        for (let key in arr) {
+          console.log(arr[key]);
+        }
+        console.log("Using for/of loop"); //Using for/of
+        for (let point of arr) {
+          console.log(point);
+        }
+        console.log("Using while loop"); //Using while
+        let rep = 0;
+        while (rep < 4) {
+          console.log(arr[rep]);
+          rep++;
+        }
+        console.log("Using do/while loop"); //Using do/while
+        let rep1 = 0;
+        do {
+          console.log(arr[rep1]);
+          rep1++;
+        } while (rep1 < arr.length);
+      }
+      print(arr);
     </script>
-</body>
-
+  </body>
 </html>
