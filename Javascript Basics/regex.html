@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="display"></p>
+    <p id="replace"></p>
+    <script>
+      /**
+       * Regular Expression are used to perform  pattern-matching and search-and-replace function text.
+       * [abc] : a,b or c
+       * [^abc] : any character except a,b,c
+       * [A-Za-z] : A to Z, a to z
+       * [0-9] : 0 to 9
+       **/
+
+      /**
+       * Quantifiers:
+       * [ ]? : occurs 0 or 1 time
+       * [ ]+ : occurs 1 or more time
+       * [ ]* : occurs 0 or more time.
+       * [ ]{n} : occurs n time.
+       * [ ]{n,} : occurs n or more time
+       * [ ]{y,z} : occurs atleast y time, but less than z time.
+       **/
+
+      /**
+       * Regex meta characters:
+       * \d [0-9]
+       * \D [^0-9]
+       * \w [a-zA-Z0-9]
+       * \W [^\w]
+       **/
+      let text1 = "Visit my home";
+      let text2 = "Please close the door";
+
+      let occurrence = text1.search("home/i"); // Searches for a match and return the position(/g-global, /i-case-sensitive etc)
+      let replace = text2.replace("office", "home");
+
+      document.getElementById(
+        "display"
+      ).innerHTML = `'home' is found at place ${occurrence}`;
+
+      document.getElementById(
+        "replace"
+      ).innerHTML = `office replaced with home`;
+    </script>
+  </body>
+</html>

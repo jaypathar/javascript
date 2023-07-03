@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      let str1 = "This is a string";
+      let str2 = " written by me";
+      console.log(`str1: ${str1}, str2: ${str2}`);
+      console.log("Length of str1: " + str1.length); // return length of string(also counts white spaces).
+      console.log("String concatenation: " + str1 + str2); // string concatenation.
+      console.log("Extracting substring from str2: " + str2.substr(9)); // fetching substring.
+      console.log(
+        "First occurrence of 'written' (left to right): " +
+          str2.indexOf("written")
+      ); // search for position
+      console.log(
+        "First occurrence of 'written' (right to left): " +
+          str2.lastIndexOf("by")
+      );
+      console.log("Removing white space: " + str1.trim()); // Remove white spaces
+      console.log("Convert to uppercase: " + str2.toUpperCase()); // convert to uppercase
+      console.log(
+        "Check if the word 'by' is  there in str2: " + str2.includes("by") // check if word is there or not
+      );
+      console.log("Take of the word 'string' from str1: " + str1.slice(9)); // using slice()
+      console.log("String to array: " + str1.split(" ")); // split array based on white space
+    </script>
+  </body>
+</html>
