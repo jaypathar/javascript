@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object oriented Programming</title>
+  </head>
+  <body>
+    <script>
+      /**
+         Write a JavaScript class that represents a circle. The class should have the following properties:
+         radius: The radius of the circle circumference: The circumference of the circle
+         area: The area of the circle
+         The class should also have the following methods:
+         getRadius(): Returns the radius of the circle
+         setRadius(): Sets the radius of the circle
+         getCircumference(): Returns the circumference of the circle
+         setCircumference(): Sets the circumference of the circle
+         getArea(): Returns the area of the circle
+         setArea(): Sets the area of the circle
+         area = pi * radius * radius, circumference = 2*pi*radius,
+       **/
+
+      class circle {
+        constructor(radius) {
+          this.radius = radius;
+          this.circumference = 2 * Math.PI * radius;
+          this.area = Math.PI * radius * radius;
+        }
+
+        getRadius() {
+          return this.radius;
+        }
+
+        setRadius(radius) {
+          this.radius = radius;
+          this.circumference = 2 * Math.PI * radius;
+          this.area = Math.PI * radius * radius;
+        }
+
+        getCircumference() {
+          return this.circumference;
+        }
+
+        setCircumference(circumference) {
+          this.circumference = circumference;
+          this.radius = circumference / (2 * Math.PI);
+          this.area = Math.PI * this.radius * this.radius;
+        }
+
+        getArea() {
+          return this.area;
+        }
+
+        setArea(area) {
+          this.area = area;
+          this.radius = Math.sqrt(area / Math.PI);
+          this.circumference = 2 * Math.PI * this.radius;
+        }
+      }
+      const circle1 = new circle();
+      circle1.setRadius(3);
+      console.log("The radius is: " + circle1.getRadius().toFixed(2));
+      console.log("The area is: " + circle1.getArea().toFixed(2));
+      console.log(
+        "The circumference is: " + circle1.getCircumference().toFixed(2)
+      );
+
+      const circle2 = new circle(4);
+      console.log("The radius is: " + circle2.getRadius().toFixed(2));
+      console.log("The area is: " + circle2.getArea().toFixed(2));
+      console.log(
+        "The circumference is: " + circle2.getCircumference().toFixed(2)
+      );
+
+      const circle3 = new circle();
+      circle3.setArea(5);
+      console.log("The radius is: " + circle3.getRadius().toFixed(2));
+      console.log("The area is: " + circle3.getArea().toFixed(2));
+      console.log(
+        "The circumference is: " + circle3.getCircumference().toFixed(2)
+      );
+    </script>
+    <script>
+      /**
+       * Write a JavaScript class that represents a car. The class should have the following properties:
+         make: The make of the car 
+         model: The model of the car
+         year: The year the car was made
+         mileage: The car's mileage
+         The class should also have the following methods:
+         getMake(): Returns the make of the car
+         setMake(): Sets the make of the car
+         getModel(): Returns the model of the car
+         setModel(): Sets the model of the car
+         getYear(): Returns the year the car was made
+         setYear(): Sets the year the car was made
+         getMileage(): Returns the car's mileage
+         setMileage(): Sets the car's mileage
+**/
+    </script>
+  </body>
+</html>
