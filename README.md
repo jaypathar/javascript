@@ -9,6 +9,37 @@
     - JavaScript Errors: Syntax errors, Runtime errors, Logic errors, and error handling
     - Loops and functions in javascript
 
+## Regular Expression
+
+**Regular Expression are used to perform pattern-matching and search-and-replace function text.**
+
+    - [abc] : a,b or c
+    - [^abc] : any character except a,b,c
+    - [A-Za-z] : A to Z, a to z \* [0-9] : 0 to 9
+
+- Quantifiers
+  - [ ]? : occurs 0 or 1 time
+  - [ ]+ : occurs 1 or more time
+  - [ ]\* : occurs 0 or more time.
+  - [ ]{n} : occurs n time.
+  - [ ]{n,} : occurs n or more time
+  - [ ]{y,z} : occurs atleast y time, but less than z time.
+- Regex meta characters:
+  - \d [0-9]
+  - \D [^0-9]
+  - \w [a-zA-Z0-9]
+  - \W [^\w]
+
+## var vs let vs const
+
+- var: function-scoped and can be updated and redeclared.
+
+- let: block-scoped, can be updated, but cannot be redeclared.
+
+- const: block-scoped, cannot be updated and redeclared.
+
+  ![Alt text](image.png)
+
 # Github process
 
     - Open Vs code terminal
@@ -48,6 +79,6 @@
 
     - GET    : CREATE
     - POST   : READ
-    - PUT    : UPDATE(Replace Information)
-    - PATCH  : UPDATE(Modify Information)
+    - PUT    : UPDATE(Replace Complete Information)
+    - PATCH  : UPDATE(Modify Partial Information)
     - DELETE : DELETE
