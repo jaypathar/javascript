@@ -3,11 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Regular Expression</title>
   </head>
   <body>
-    <p id="display"></p>
-    <p id="replace"></p>
     <script>
       /**
        * Regular Expression are used to perform  pattern-matching and search-and-replace function text.
@@ -34,19 +32,48 @@
        * \w [a-zA-Z0-9]
        * \W [^\w]
        **/
-      let text1 = "Visit my home";
-      let text2 = "Please close the door";
+      // Regular expression pattern to match email addresses
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-      let occurrence = text1.search("home/i"); // Searches for a match and return the position(/g-global, /i-case-sensitive etc)
-      let replace = text2.replace("office", "home");
+      // Test string
+      const email = "test@example.com";
 
-      document.getElementById(
-        "display"
-      ).innerHTML = `'home' is found at place ${occurrence}`;
+      // Test if the email matches the regular expression pattern
+      const isEmailValid = emailRegex.test(email);
+      console.log(`Is email valid? ${isEmailValid}`);
 
-      document.getElementById(
-        "replace"
-      ).innerHTML = `office replaced with home`;
+      // Regular expression pattern to match phone numbers in the format "+XXX-XXXXXXXXXX"
+      const phoneRegex = /^\+91-\d{10}$/;
+
+      // Test string
+      const phoneNumber = "+91-9408416322";
+
+      // Test if the phone number matches the regular expression pattern
+      const isPhoneNumberValid = phoneRegex.test(phoneNumber);
+      console.log(`Is phone number valid? ${isPhoneNumberValid}`);
+
+      // Regular expression pattern to replace all occurrences of a word with another word
+      const replaceRegex = /apple/g;
+
+      // Test string
+      const text = "I like apple. Apple is delicious.";
+
+      // Replace all occurrences of "apple" with "orange"
+      const newText = text.replace(replaceRegex, "orange");
+      console.log(`New text: ${newText}`);
+    </script>
+
+    <script>
+      /**
+       *Array inbuilt functions.
+       **/
+      let nums = [42, 51, 24, 98, 65, 12];
+      nums;
+      let result = nums
+        .filter((key) => key % 2 === 0)
+        .map((key) => key * 2)
+        .reduce((num1, num2) => num1 + num2);
+      console.log(result);
     </script>
   </body>
 </html>

@@ -43,3 +43,11 @@
     - You can commit the changes itself there and take a pull locally.(The changes which were remote will also be made locally).
     - And that remaining changes can be made locally and then pushed again.
     - After pushing,you need to reopen the PR for review.
+
+# HTTP Methods:
+
+    - GET    : CREATE
+    - POST   : READ
+    - PUT    : UPDATE(Replace Information)
+    - PATCH  : UPDATE(Modify Information)
+    - DELETE : DELETE
