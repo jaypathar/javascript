@@ -22,6 +22,7 @@
        **/
 
       class circle {
+        // constructor function called as soon as object is created.
         constructor(radius) {
           this.radius = radius;
           this.circumference = 2 * Math.PI * radius;
@@ -65,14 +66,14 @@
       console.log(
         "The circumference is: " + circle1.getCircumference().toFixed(2)
       );
-
+      // Creating new instance 'circle2'
       const circle2 = new circle(4);
       console.log("The radius is: " + circle2.getRadius().toFixed(2));
       console.log("The area is: " + circle2.getArea().toFixed(2));
       console.log(
         "The circumference is: " + circle2.getCircumference().toFixed(2)
       );
-
+      // Creating new instance 'circle3'
       const circle3 = new circle();
       circle3.setArea(5);
       console.log("The radius is: " + circle3.getRadius().toFixed(2));
@@ -98,6 +99,59 @@
          getMileage(): Returns the car's mileage
          setMileage(): Sets the car's mileage
 **/
+      class car {
+        // Constructor function called as soon as object is created.
+        constructor(make, model, year, mileage) {
+          this.make = make;
+          this.model = model;
+          this.year = year;
+          this.mileage = mileage;
+        }
+
+        getMake() {
+          return this.make;
+        }
+
+        setMake(make) {
+          this.make = make;
+        }
+
+        getModel() {
+          return this.model;
+        }
+
+        setModel(model) {
+          this.model = model;
+        }
+
+        getYear() {
+          return this.year;
+        }
+
+        setYear(year) {
+          this.year = year;
+        }
+
+        getMileage() {
+          return this.mileage;
+        }
+
+        setMileage(mileage) {
+          this.mileage = mileage;
+        }
+      }
+      // creating object(instance) 'car1' and getting and setting various properties.
+      const car1 = new car("Mercedes‑Benz", "A-class", 2022, 5000);
+
+      console.log("The Make:", car1.getMake());
+      console.log("The Model:", car1.getModel());
+      console.log("The Year:", car1.getYear());
+      console.log("The Mileage:", car1.getMileage());
+
+      car1.setMake("Suzuki");
+      car1.setModel("swift");
+      car1.setYear(2020);
+      car1.setMileage(8000);
     </script>
   </body>
 </html>

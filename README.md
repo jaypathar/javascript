@@ -12,6 +12,16 @@
     - JavaScript Objects: Creating objects, object properties, and object methods, Prototypes.
     - Function Declaration,Expression,Arrow function,callbacks first class and Higher order function.
 
+# Object Oriented Programming
+
+In OOPS we group function and variable in a block called class.
+
+- Four pillars:
+  - Inheritance: Subclass(i.e. child class) acquiring properties of parent class(i.e. base class/super class)
+  - Polymorphism: Many Forms/Same function name but different functionalities.
+  - Encapsulation: Wrapping up of data and member function into single unit.
+  - Data abstraction: Process of showing essential.necessary features and hide irrelevant data.
+
 # Creating a Repository on Git.
 
     - open VScode,create a folder,open terminal and type the 'git init' command to start a repository.
