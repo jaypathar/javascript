@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetching JSON Data</title>
+  </head>
+  <body>
+    <script>
+      // Function
+      function userLogin() {
+        console.log("Enter Username and password: ");
+        const userName = prompt("Enter username: ");
+        const password = prompt("Enter password: ");
+
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (userName == "1" && password == "1") {
+              resolve("User Authenticated!");
+            } else {
+              reject("Authentication Failed!");
+            }
+          }, 2000);
+        });
+      }
+
+      function gotoHomePage(userAuthStatus) {
+        return Promise.resolve(`Go to home page as : ${userAuthStatus}`);
+      }
+
+      // The resolved message will be passed to callback of .then()(i.e. data variable = "User Authenticated")
+
+      //using promises
+      //   userLogin()
+      //     .then((data) => {
+      //       return gotoHomePage(data);
+      //     })
+      //     .then((data) => {
+      //       console.log(data);
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+
+      // Creating a async function
+      async function perform() {
+        //Exception handling
+        try {
+          // Waiting until the userLogin() is not resolved.
+          // We cannot use await in regular functions else it will return an error.
+          const response = await userLogin();
+          const userAuthStatus = await gotoHomePage(response);
+          console.log(userAuthStatus);
+        } catch (error) {
+          // If error arises (i.e invalid authentication) ,catching the error.
+          console.log(error);
+        }
+      }
+      perform();
+    </script>
+  </body>
+</html>
