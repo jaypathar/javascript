@@ -12,7 +12,7 @@
        * In the first 2 sec fetch rollNo.
        * After execution, fetch name and age.
        **/
-      const pObj1 = new Promise((resolve, reject) => {
+      const personObj1 = new Promise((resolve, reject) => {
         setTimeout(() => {
           const arr = [1, 2, 3, 4, 5];
           resolve(arr);
@@ -35,7 +35,7 @@
       };
 
       // Using Promises:
-      pObj1
+      personObj1
         .then((data) => {
           console.log(data);
           getBiodata(data[1]);
@@ -49,10 +49,10 @@
 
       // Using Async-Await
       async function getData() {
-        const dataRollNo = await pObj1;
+        const dataRollNo = await personObj1;
         console.log(dataRollNo);
-        const a = await getBiodata(dataRollNo[1]);
-        console.log(a);
+        const data = await getBiodata(dataRollNo[1]);
+        console.log(data);
       }
       getData();
     </script>

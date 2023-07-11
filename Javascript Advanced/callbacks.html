@@ -13,10 +13,10 @@
        * A callback is a function passed as argument to another function.
        **/
 
-      //Example 1:
+      // Example 1:
 
       // Callback function.
-      function mydisplayer(sum) {
+      function myDisplayer(sum) {
         console.log("Addition is: " + sum);
       }
 
@@ -26,19 +26,19 @@
         myCallback(sum);
       }
       // Passing function as an argument.
-      myCalculator(5, 5, mydisplayer);
+      myCalculator(5, 5, myDisplayer);
 
-      //Example 2:
+      // Example 2:
 
-      //This is the callback method.
+      // This is the callback method.
       const calculate = (a, b, operation) => {
         return operation(a, b);
       };
-      //Method  1
+      // Method  1
       const addition = calculate(3, 4, function (num1, num2) {
         return num1 + num2;
       });
-      //Method 2:
+      // Method 2:
       const subtraction = (a, b) => a - b;
       console.log(
         "The result of  subtraction: " + calculate(8, 3, subtraction)
@@ -54,7 +54,7 @@
       /**
        * Basic Array callback methods
        **/
-      //Declaring and initializing an array
+      // Declaring and initializing an array
       const arr = [4, 1, 6, -2, -5, 3, 2, -8, 6, 7];
       // Function to retrieve negative number.
       const firstNegative = (num) => {
@@ -84,7 +84,7 @@
           callback(cheese);
         }, 2000);
       }
-      //Making dough.
+      // Making dough.
       function makeDough(cheese, callback) {
         setTimeout(() => {
           const dough = cheese + "🍪";
