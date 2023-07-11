@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * In ES5, there was no concept of class.Constructor functions were used as shown below.
+       **/
+      function Person(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.display = function () {
+          console.log(`My name is ${this.firstName + " " + this.lastName}`);
+        };
+      }
+      let person1 = new Person("Mark", "Thomson", 32);
+      person1.display();
+      console.log(`My age is ${person1.age}`);
+      Person.prototype.nationality = "Indian";
+      console.log(`And I am an ${person1.nationality}`);
+
+      /** Prototype: Whenever we create an object, JavaScript automatically attaches some inbuilt functionalities to that object other than defined.
+       * Let's say that a class object1 inherits from main class.Hence main class may also be inheriting from another class without actually mentioning it within the code.This natural activity is called prototyping.
+       **/
+      let main = {
+        name: "henry",
+        age: 23,
+        location: "Paris",
+      };
+
+      let object1 = {
+        name: "Twin",
+        age: 20,
+      };
+      // Setting the object1 prototype = main: prototype inheritance
+      object1.__proto__ = main;
+
+      console.log(object1.location);
+
+      /**
+       * ES6: Classes and objects
+       * Three kinds of methods are defined in class: constructor ,prototype, static
+       **/
+      class student {
+        // Constructor method: Automatically called when object is created.
+        constructor(firstName, lastName, age) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+        }
+        // Prototype function: called using dot operator.
+        display() {
+          console.log("This is student class function!");
+        }
+
+        // Static method: Function called with class name and not object name.
+        static print() {
+          console.log("This is static method!");
+        }
+      }
+      let student1 = new student("Barry", "Allen", 20);
+      console.log(student1);
+      student1.display();
+      student.print(); // static function call.
+
+      /**
+       * Inheritance: Accessing properties and methods of parent class.
+       **/
+      class employee {
+        constructor(name) {
+          this.empName = name;
+        }
+
+        msg() {
+          console.log("This method is called using manager object.");
+        }
+      }
+      // manager class inherits properties from employee.
+      class manager extends employee {
+        constructor(name, dept) {
+          super(name);
+          this.department = dept;
+        }
+
+        msg() {
+          console.log("Child class function");
+        }
+
+        info() {
+          super.msg(); // calling function of super class.
+          this.msg(); // calling function of child class.
+          console.log(
+            this.empName + " is manager of department " + this.department
+          );
+        }
+      }
+
+      class admin extends manager {}
+
+      let manager1 = new manager("Bruce", "Engineer");
+      console.log(manager1);
+      manager1.msg(); // parent class function called using child class object.
+      manager1.info();
+
+      let admin1 = new admin("Tony", "sales");
+      admin1.info();
+
+      /**
+       * public and private properties.
+       **/
+      class Counter {
+        // Private property.
+        #count = 0;
+
+        // Public methods accessing the private property
+        increment() {
+          this.#count++;
+          console.log("Count:", this.#count);
+        }
+
+        decrement() {
+          if (this.#count > 0) {
+            this.#count--;
+            console.log("Count:", this.#count);
+          }
+        }
+      }
+
+      // Create an instance of the Counter class
+      const counter = new Counter();
+
+      // Public methods can be accessed and used externally
+      counter.increment(); // Count = 1
+      counter.increment(); // Count = 2
+      counter.decrement(); // Count = 1
+    </script>
+  </body>
+</html>

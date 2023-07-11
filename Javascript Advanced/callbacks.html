@@ -6,18 +6,154 @@
     <title>Callbacks</title>
   </head>
   <body>
-    <p id="demo"></p>
     <script>
-      function mydisplayer(sum) {
-        document.getElementById("demo").innerHTML = sum;
+      /**
+       * Synchronous: Execution of each task is dependent on each other.
+       * Asynchronous: Task execute independently.Functions in function stack can run concurrently.
+       * A callback is a function passed as argument to another function.
+       **/
+
+      // Example 1:
+
+      // Callback function.
+      function myDisplayer(sum) {
+        console.log("Addition is: " + sum);
       }
 
+      // Function.
       function myCalculator(num1, num2, myCallback) {
-        let sum = num1 + num2;
+        const sum = num1 + num2;
         myCallback(sum);
       }
+      // Passing function as an argument.
+      myCalculator(5, 5, myDisplayer);
 
-      myCalculator(5, 5, mydisplayer);
+      // Example 2:
+
+      // This is the callback method.
+      const calculate = (a, b, operation) => {
+        return operation(a, b);
+      };
+      // Method  1
+      const addition = calculate(3, 4, function (num1, num2) {
+        return num1 + num2;
+      });
+      // Method 2:
+      const subtraction = (a, b) => a - b;
+      console.log(
+        "The result of  subtraction: " + calculate(8, 3, subtraction)
+      );
+      //Method 3
+      function multiply(input1, input2) {
+        return input1 * input2;
+      }
+      console.log(
+        "The multiplication of two numbers is: " + calculate(3, 2, multiply)
+      );
+
+      /**
+       * Basic Array callback methods
+       **/
+      // Declaring and initializing an array
+      const arr = [4, 1, 6, -2, -5, 3, 2, -8, 6, 7];
+      // Function to retrieve negative number.
+      const firstNegative = (num) => {
+        return num < 0;
+      };
+      // Passing firstNegative as callback.
+      console.log(
+        "First Negative number in an array: " + arr.find(firstNegative)
+      );
+      // Passing firstNegative as callback and fetching index of number returned.
+      console.log("Index of the number: " + arr.findIndex(firstNegative));
+
+      // Filter array for even-positive numbers
+      console.log(
+        arr.filter((num) => {
+          return (num % 2 == 0) & (num > 0);
+        })
+      );
+      /**
+       * process of making pizza: cheese -> dought -> pizza
+       **/
+      // Getting cheese.
+      function getCheese(callback) {
+        setTimeout(() => {
+          const cheese = "🧀";
+          console.log("Here is the cheese the: ", cheese);
+          callback(cheese);
+        }, 2000);
+      }
+      // Making dough.
+      function makeDough(cheese, callback) {
+        setTimeout(() => {
+          const dough = cheese + "🍪";
+          console.log("Here is the: ", dough);
+          callback(dough);
+        }, 2000);
+      }
+      // Finally making pizza.
+      function makePizza(dough, callback) {
+        setTimeout(() => {
+          const pizza = dough + "🍕";
+          callback(pizza);
+        }, 2000);
+      }
+      // Callback hell: Every function is calling a callback hence it becomes difficult to debug.
+      getCheese((cheese) => {
+        makeDough(cheese, (dough) => {
+          makePizza(dough, (pizza) => {
+            console.log("The pizza is ready.", pizza);
+          });
+        });
+      });
+    </script>
+    <script>
+      // Creating an object
+      const data = [
+        { name: "Mark", designation: "Engineer" },
+        { name: "Sam", designation: "Sales Officer" },
+      ];
+      // Creating a function to display data.name
+      function getData() {
+        let output = "";
+        setTimeout(() => {
+          data.forEach((data, index) => {
+            output += `<li>${data.name}</li>`;
+          });
+          document.body.innerHTML = output;
+        }, 5000);
+      }
+      function createData(newData) {
+        // Creating promise object
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            data.push(newData);
+            let error = false;
+            if (!error) {
+              resolve();
+            } else {
+              reject("There is a mistake");
+            }
+          });
+        }, 2000);
+      }
+
+      // calling and appending newData into the object
+
+      createData({ name: "Tony", designation: "Business Analyst" })
+        .then(getData())
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // Async and await
+      async function start() {
+        await createData({ name: "Tony", designation: "Business Analyst" });
+        getData();
+      }
+      // Function call
+      start();
     </script>
   </body>
 </html>
