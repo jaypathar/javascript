@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async-Await 1</title>
+  </head>
+  <body>
+    <script>
+      // A function returning a promise: resolved
+      function getAPIData() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let userInfo = {
+              id: 1,
+              name: "Sam",
+              address: "Paris",
+            };
+            resolve(userInfo);
+          }, 2000);
+        });
+      }
+
+      async function homePage() {
+        let apiRecord = await getAPIData();
+        console.log(apiRecord);
+        console.log("Home Page.");
+      }
+      homePage();
+    </script>
+  </body>
+</html>

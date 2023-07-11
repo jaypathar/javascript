@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      // Function returning a promise which will have two states: resolve and reject.
+      function gift() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const ifCorrect = true;
+            if (ifCorrect) {
+              resolve("He will get a gift.");
+            } else {
+              reject("No gift.");
+            }
+          }, 2000);
+        });
+      }
+      // Function returning a promise.
+      function party(data) {
+        return new Promise((resolve, reject) => {
+          setTimeout(
+            (data) => {
+              resolve("We will party!");
+            },
+            3000,
+            data
+          );
+        });
+      }
+
+      //Using Promises.
+      //   gift() called, if condition is satisfied data will be passed and hence we can print.
+      gift().then((data) => {
+        console.log(data);
+        party(data).then((data) => {
+          console.log(data);
+        });
+      });
+
+      //Writing the above program using async-await.
+
+      async function roadMap() {
+        const first = await gift();
+        console.log(first);
+        const second = await party(first);
+        console.log(party);
+      }
+      roadMap();
+    </script>
+  </body>
+</html>

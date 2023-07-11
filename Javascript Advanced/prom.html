@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * We have students API which consists of name,age,rollNo.
+       * In the first 2 sec fetch rollNo.
+       * After execution, fetch name and age.
+       **/
+      const personObj1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const arr = [1, 2, 3, 4, 5];
+          resolve(arr);
+        }, 2000);
+      });
+      // function returning a resolved promise.
+      const getBiodata = (indexData) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(
+            (indexData) => {
+              let biodata = { name: "mark", age: 21 };
+              resolve(
+                `My rollNo. is ${indexData}.My name is ${biodata.name} and age is ${biodata.age}.`
+              );
+            },
+            2000,
+            indexData
+          );
+        });
+      };
+
+      // Using Promises:
+      personObj1
+        .then((data) => {
+          console.log(data);
+          getBiodata(data[1]);
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // Using Async-Await
+      async function getData() {
+        const dataRollNo = await personObj1;
+        console.log(dataRollNo);
+        const data = await getBiodata(dataRollNo[1]);
+        console.log(data);
+      }
+      getData();
+    </script>
+  </body>
+</html>

@@ -12,6 +12,19 @@
     - JavaScript Objects: Creating objects, object properties, and object methods, Prototypes.
     - Function Declaration,Expression,Arrow function,callbacks first class and Higher order function.
 
+## Promises
+
+Promises are used to find out if an operation is successfully completed or not.
+
+- It basically has three states:
+  - Pending =>
+  - Fulfilled => .then(onFulfillment)
+  - Rejected=> .catch(onRejection)
+- Using a promise:
+  - .then() block: used with callback when the promise is successfully resolved.
+  - .catch() block: used with callback when the promise is rejected.
+  - .finally() block: method gets executes irrespective if promise is resolved/rejected.
+
 # Object Oriented Programming
 
 In OOPS we group function and variable in a block called class.

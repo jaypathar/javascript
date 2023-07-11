@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callbacks_promises_async/await</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * This file contains both callbacks and promises solved with with common example.
+       **/
+
+      // Using Callbacks
+
+      // Array Object
+      var posts = [
+        { title: "Post One", body: "This is post one." },
+        { title: "Post Two", body: "This is post two." },
+      ];
+
+      // Function to retrieve post.
+      function getPosts() {
+        setTimeout(() => {
+          let display = "";
+          posts.forEach((post) => {
+            display += `<li>${post.title}</li>`;
+            document.body.innerHTML = display;
+          });
+        }, 1000);
+      }
+
+      // Function to create post(append data into array)
+      function createPost(newData, callback) {
+        setTimeout(() => {
+          posts.push(newData);
+          callback();
+        }, 2000);
+      }
+
+      // calling function and passing  object and callback function.
+      createPost(
+        { title: "Post Three", body: "This is post three." },
+        getPosts
+      );
+    </script>
+
+    <script>
+      // example using promises.
+
+      // Declaring an array object.
+      var posts = [
+        { title: "Post One", body: "This is post one." },
+        { title: "Post Two", body: "This is post two." },
+      ];
+
+      // Function to retrieve posts.
+      function getPosts() {
+        // Using the setTimeout() to run code after 1 sec(i.e. 1000 milliseconds)
+        setTimeout(() => {
+          let display = "";
+          posts.forEach((post) => {
+            display += `<li>${post.title}</li>`;
+            document.body.innerHTML = display;
+          });
+        }, 1000);
+      }
+
+      // Function to create post(append data into array)
+      function createPost(newData) {
+        return new Promise((resolve, reject) => {
+          // Using the setTimeout() to run code after 2 sec(i.e. 2000 milliseconds)
+          setTimeout(() => {
+            posts.push(newData);
+            const error = false;
+            if (!error) {
+              resolve();
+            } else {
+              reject("Something is wrong");
+            }
+          }, 2000);
+        });
+      }
+
+      // Function call
+      createPost({ title: "Post Three", body: "This is post three." })
+        .then(getPosts)
+        .catch((error) => {
+          console.log(error);
+        });
+
+      init();
+    </script>
+  </body>
+</html>
