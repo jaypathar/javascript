@@ -7,36 +7,45 @@
   </head>
   <body>
     <script>
+      // normal function.
       function first() {
         console.log("First");
       }
+      // function second() and passing third() as callback.
       function second(callback) {
+        // code within setTimeout() will run after 1 sec.
         setTimeout(() => {
           console.log("second.");
+          // calling third() and passing  fourth() as callback..
           callback(forth);
         }, 1000);
       }
 
+      // function third() and passing fourth() as callback.
       function third(callback) {
+        // This block of code will  be executed after 2 sec.
         setTimeout(() => {
           console.log("third");
+          // calling fourth() and passing fifth() as callback.
           callback(fifth);
         }, 2000);
       }
-
+      // function fourth() and passing fifth() as callback.
       function forth(callback) {
         setTimeout(() => {
           console.log("fourth");
-          callback(fifth);
+          callback();
         }, 3000);
       }
 
       function fifth() {
+        // This  block of code will run after 2 sec.
         setTimeout(() => {
           console.log("fifth");
         }, 2000);
       }
       first();
+      // asynchronous function call - after second() is executed, third() will be called.
       second(third);
 
       // Callback hell:Nesting of calls makes it difficult to handle errors and debugging.
@@ -54,6 +63,7 @@
       callbackHell();
     </script>
     <script>
+      // function returning a  promise.
       function getUsers(onSuccess) {
         return new Promise((resolve, reject) => {
           if (onSuccess) {
@@ -87,10 +97,11 @@
       function getData(data) {
         console.log(data.map((key) => key * 2));
       }
-      //function call and passing callback function.
+      // function call and passing callback function.
       fetchData(getData);
     </script>
     <script>
+      // function returning a promise: nor resolved nor rejected.
       function fetchData() {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
@@ -98,6 +109,7 @@
           }, 7000);
         });
       }
+      // The promise is not resolved  nor rejected: hence it will be in pending state.
       fetchData()
         .then((data) => {
           console.log(data);
