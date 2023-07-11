@@ -25,6 +25,47 @@ Promises are used to find out if an operation is successfully completed or not.
   - .catch() block: used with callback when the promise is rejected.
   - .finally() block: method gets executes irrespective if promise is resolved/rejected.
 
+# Object Oriented Programming
+
+In OOPS we group function and variable in a block called class.
+
+- Four pillars:
+  - Inheritance: Subclass(i.e. child class) acquiring properties of parent class(i.e. base class/super class)
+  - Polymorphism: Many Forms/Same function name but different functionalities.
+  - Encapsulation: Wrapping up of data and member function into single unit.
+  - Data abstraction: Process of showing essential.necessary features and hide irrelevant data.
+
+## Regular Expression
+
+**Regular Expression are used to perform pattern-matching and search-and-replace function text.**
+
+    - [abc] : a,b or c
+    - [^abc] : any character except a,b,c
+    - [A-Za-z] : A to Z, a to z \* [0-9] : 0 to 9
+
+- Quantifiers
+  - [ ]? : occurs 0 or 1 time
+  - [ ]+ : occurs 1 or more time
+  - [ ]\* : occurs 0 or more time.
+  - [ ]{n} : occurs n time.
+  - [ ]{n,} : occurs n or more time
+  - [ ]{y,z} : occurs atleast y time, but less than z time.
+- Regex meta characters:
+  - \d [0-9]
+  - \D [^0-9]
+  - \w [a-zA-Z0-9]
+  - \W [^\w]
+
+## var vs let vs const
+
+- var: function-scoped and can be updated and redeclared.
+
+- let: block-scoped, can be updated, but cannot be redeclared.
+
+- const: block-scoped, cannot be updated and redeclared.
+
+  ![Alt text](image.png)
+
 # Creating a Repository on Git.
 
     - open VScode,create a folder,open terminal and type the 'git init' command to start a repository.
@@ -58,8 +99,7 @@ Promises are used to find out if an operation is successfully completed or not.
     - You can commit the changes itself there and take a pull locally.(The changes which were remote will also be made locally).
     - And that remaining changes can be made locally and then pushed again.
     - After pushing,the reviewer will be notified about changes.
-    - If approved, then merge it with main else
-    repeat the review process.
+    - If approved, then merge it with main else repeat the review process.
 
 **Resolving fetch/pull query locally.**
 
@@ -88,3 +128,11 @@ Promises are used to find out if an operation is successfully completed or not.
     3XX : Redirects
     4XX : Client Error
     5XX : Server Error
+
+# HTTP Methods:
+
+    - GET    : CREATE
+    - POST   : READ
+    - PUT    : UPDATE(Replace Complete Information)
+    - PATCH  : UPDATE(Modify Partial Information)
+    - DELETE : DELETE
