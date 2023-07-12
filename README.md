@@ -11,6 +11,16 @@
     - Array and its methods.
     - JavaScript Objects: Creating objects, object properties, and object methods, Prototypes.
     - Function Declaration,Expression,Arrow function,callbacks first class and Higher order function.
+    - JavaScript Regular Expression
+    - String and its methods
+    - JavaScript Classes: Defining classes, constructor functions, and inheritance.
+    - callbacks,promises and async/await.
+    - Event Loop and Callback Queue in JavaScript.
+    - JavaScript JSON: Parsing and serializing JSON data.
+    - Commonly used JavaScript Libraries and Frameworks.
+    - JavaScript Best Practices: Coding standards, naming conventions, and style guides.
+    - Event Loop and Callback Queue in JavaScript.
+    - Modules in JavaScript.
 
 ## Promises
 
@@ -111,7 +121,9 @@ In OOPS we group function and variable in a block called class.
 
 **Note: Meanwhile you can stash changes on test2 and get back later.**
 
-    - After taking pull from the main now we have latest changes in our branch test2.
+    - we need to create a merge commit.
+    - on github desktop - we can come to the current branch where  we want the latest changes.
+    - we have an option to choose a  branch to merge changes into the  current branch.
 
 **Note: There maybe conflict because you maybe making manipulations to common file in both branches.**
 
