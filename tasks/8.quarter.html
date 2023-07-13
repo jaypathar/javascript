@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quarter</title>
-  </head>
-  <body>
-    <script>
-      /**
-       *Write a program that takes a month number as input (1-12) and determines the corresponding quarter 
-        of the year.
-        Instructions:
-        Prompt the user to enter a month number.Validate the input to ensure it is a valid month number (between 1 and 12).Determine the quarter of the year based on the month number provided.
-        Display the quarter to the user. 
-      **/
 
-      // function declaration.
-      function checkMonth() {
-        const inputMonth = prompt("Enter month number: ");
-        if (inputMonth >= 1 && inputMonth <= 3) {
-          console.log("The corresponding quarter is: Q1 ");
-        } else if (inputMonth > 3 && inputMonth <= 6) {
-          console.log("The corresponding quarter is: Q2");
-        } else if (inputMonth > 6 && inputMonth <= 9) {
-          console.log("The corresponding quarter is: Q3");
-        } else if (inputMonth > 9 && inputMonth <= 12) {
-          console.log("The corresponding quarter is: Q4");
-        } else {
-          // If user inputs wrong month, it will alert a message.
-          alert("Enter a valid month number");
-          // Making a function call until condition is satisfied.
-          checkMonth();
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarter</title>
+</head>
+
+<body>
+  <script>
+    /**
+     * Write a program that takes a month number as input (1-12) and determines the corresponding quarter
+     * of the year.
+     * Instructions:
+     * Prompt the user to enter a month number.Validate the input to ensure it is a valid month number
+     * (between 1 and 12).Determine the quarter of the year based on the month number provided.
+     * Display the quarter to the user. 
+     **/
+
+    // function declaration.
+    function checkMonth() {
+      const inputMonth = prompt("Enter month number: ");
+      if (inputMonth >= 1 && inputMonth <= 3) {
+        console.log("The corresponding quarter is: Q1 ");
+      } else if (inputMonth > 3 && inputMonth <= 6) {
+        console.log("The corresponding quarter is: Q2");
+      } else if (inputMonth > 6 && inputMonth <= 9) {
+        console.log("The corresponding quarter is: Q3");
+      } else if (inputMonth > 9 && inputMonth <= 12) {
+        console.log("The corresponding quarter is: Q4");
+      } else {
+        // If user inputs wrong month, it will alert a message.
+        alert("Enter a valid month number");
+        // Making a function call until condition is satisfied.
+        checkMonth();
       }
+    }
 
-      // function call.
-      checkMonth();
-    </script>
-  </body>
+    // function call.
+    checkMonth();
+  </script>
+</body>
+
 </html>
