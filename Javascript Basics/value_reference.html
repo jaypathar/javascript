@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call by value / call by reference</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * pass by value works with primitive data types(numbers, strings, booleans, null, undefined etc).
+         **/
+
+        let value1 = 5;
+
+        // value1 has been passed to value2.hence both will work independently.
+        let value2 = value1 // value2 = 5
+        value2++
+        console.log(value2) // value2 =6
+
+        /**
+         * pass by reference works non-primitive data types(objects and arrays).
+         **/
+
+        let object1 = {
+            name: "Mark",
+            age: 23
+        }
+
+        // object2 is assigned object1.
+        let object2 = object1
+
+        // adding a property object2.location
+        object2.location = "USA"
+
+        /**
+         * hence object1 is also updated with the same property.we are passing the reference of object1 to
+         * object2.Moreover, if object1 is updated, the change will also be reflected in object2 and 
+         * vice-versa.
+         **/
+        console.log(object1)
+        console.log(object2)
+
+        // similarly with an array.
+        let array1 = [1, 2, 3]
+        let array2 = array1
+
+        // adding elements to above arrays.
+        array2.push(4)
+        array1.push(5)
+
+        // the changes in any one array will be reflected in both.
+        console.log(array1)
+        console.log(array2)
+
+    </script>
+</body>
+
+</html>

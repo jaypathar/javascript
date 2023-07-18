@@ -21,6 +21,7 @@
     - JavaScript Best Practices: Coding standards, naming conventions, and style guides.
     - Event Loop and Callback Queue in JavaScript.
     - Modules in JavaScript.
+    - call by value and call by reference.
 
 ## Promises
 
@@ -148,3 +149,22 @@ In OOPS we group function and variable in a block called class.
     - PUT    : UPDATE(Replace Complete Information)
     - PATCH  : UPDATE(Modify Partial Information)
     - DELETE : DELETE
+
+# Tasks
+
+- Program to prompt user for name and greet with message.
+- Program to use array, sets and map to store and manipulate data.
+- Declare variables of different data types and print them.
+- Function accepts parameter and stores data using variable declaration.
+- Calculate factorial of number using recursion.
+- Program produces errors(i.e. syntax,logical,runtime) and then handling it(i.e. try,catch,finally).
+- Program that takes number as input and prints positive, negative or zero.
+- Program to create object and print its properties.
+- Implementation of different kinds of functions(i.e. anonymous,arrow,function expression etc) within a single code.
+- Creating a class circle and car and defining various properties and methods within.Accessing information by creating objects.
+- Implementation of callbacks, promises, async-await in various examples.
+- Program to take number(i.e. month 1-12) and returns the quarter in which the number lies.
+
+# Mini-Projects:
+
+- Building a Todo Application by using OOPs concept in JavaScript.
