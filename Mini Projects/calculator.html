@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sales Analysis</title>
+</head>
+
+<body>
+  <h1>Sales Analysis</h1>
+  <form>
+    <label for="month">Select a month:</label>
+    <select id="month">
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <br>
+    <label for="sales">Enter the sales value:</label>
+    <input type="number" id="sales" name="sales" min="0">
+    <br>
+    <button type="button" onclick="submitSales()">Submit</button>
+    <button type="button" onclick="displaySalesAnalysis()">View Sales Analysis</button>
+  </form>
+  <script>
+    // array to store the monthly sales data for a year.
+    const salesData = [];
+
+    // function to submit the sales value for the selected month
+    const submitSales = () => {
+      const month = document.getElementById("month").value;
+      const sales = parseFloat(document.getElementById("sales").value);
+
+      // validate the input to ensure the sales value is numeric and within a range.
+      if (!isNaN(sales) && sales >= 0) {
+        // calculate and store the sales value in the corresponding month slot in the sales data list.
+        salesData[month - 1] = sales;
+
+        // clear the form inputs
+        document.getElementById("month").selectedIndex = 0;
+        document.getElementById("sales").value = "";
+
+        // show a success message
+        alert("Sales value submitted successfully.");
+      } else {
+        alert("Invalid sales value. Please try again.");
+      }
+    };
+
+    // function to display the sales analysis by quarter
+    const displaySalesAnalysis = () => {
+      let analysis = "Sales Analysis by Quarter:\n";
+
+      const quarters = {
+        Q1: salesData.slice(0, 3),
+        Q2: salesData.slice(3, 6),
+        Q3: salesData.slice(6, 9),
+        Q4: salesData.slice(9, 12)
+      };
+
+      for (const quarter in quarters) {
+        const totalSales = quarters[quarter].reduce((acc, curr) => acc + curr, 0);
+        analysis += `${quarter}: ${totalSales}\n`;
+      }
+
+      // calculate and display the average sales for each quarter.
+      for (const quarter in quarters) {
+        const averageSales = quarters[quarter].reduce((acc, curr) => acc + curr, 0) / quarters[quarter].length;
+        analysis += `Average ${quarter}: ${averageSales}\n`;
+      }
+
+      alert(analysis);
+    };
+  </script>
+</body>
+
+</html>
