@@ -30,6 +30,8 @@
     <button type="button" onclick="submitSales()">Submit</button>
     <button type="button" onclick="displaySalesAnalysis()">View Sales Analysis</button>
   </form>
+  <!-- creating a div to display data -->
+  <div id="analysis"></div>
   <script>
     // array to store the monthly sales data for a year.
     const salesData = [];
@@ -55,7 +57,7 @@
       }
     };
 
-    // function to display the sales analysis by quarter
+    // function to display the sales analysis by quarter 
     const displaySalesAnalysis = () => {
       let analysis = "Sales Analysis by Quarter:\n";
 
@@ -67,17 +69,13 @@
       };
 
       for (const quarter in quarters) {
-        const totalSales = quarters[quarter].reduce((acc, curr) => acc + curr, 0);
-        analysis += `${quarter}: ${totalSales}\n`;
+        const sales = quarters[quarter];
+        const totalSales = sales.reduce((acc, curr) => acc + curr, 0);
+        const averageSales = totalSales / sales.length;
+        analysis += `${quarter}: ${totalSales}, Average ${quarter}: ${averageSales}\n`;
       }
-
-      // calculate and display the average sales for each quarter.
-      for (const quarter in quarters) {
-        const averageSales = quarters[quarter].reduce((acc, curr) => acc + curr, 0) / quarters[quarter].length;
-        analysis += `Average ${quarter}: ${averageSales}\n`;
-      }
-
-      alert(analysis);
+      // displaying data.
+      document.getElementById("analysis").innerHTML = analysis;
     };
   </script>
 </body>
