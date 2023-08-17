@@ -27,7 +27,7 @@
     <label for="sales">Enter the sales value:</label>
     <input type="number" id="sales" name="sales" min="0">
     <br>
-    <button type="button" onclick="submitSales()">Submit</button>
+    <button type="button" onclick="addSales()">Add Sales</button>
     <button type="button" onclick="displaySalesAnalysis()">View Sales Analysis</button>
   </form>
   <!-- creating a div to display data -->
@@ -37,7 +37,7 @@
     const salesData = [];
 
     // function to submit the sales value for the selected month
-    const submitSales = () => {
+    const addSales = () => {
       const month = document.getElementById("month").value;
       const sales = parseFloat(document.getElementById("sales").value);
 
@@ -51,7 +51,7 @@
         document.getElementById("sales").value = "";
 
         // show a success message
-        alert("Sales value submitted successfully.");
+        alert("Sales value added successfully.");
       } else {
         alert("Invalid sales value. Please try again.");
       }
@@ -59,21 +59,18 @@
 
     // function to display the sales analysis by quarter 
     const displaySalesAnalysis = () => {
-      let analysis = "Sales Analysis by Quarter:\n";
+      let analysis = "<h2>Sales Analysis by Quarter:</h2><ul>";
 
-      const quarters = {
-        Q1: salesData.slice(0, 3),
-        Q2: salesData.slice(3, 6),
-        Q3: salesData.slice(6, 9),
-        Q4: salesData.slice(9, 12)
-      };
+      const quarters = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]];
 
       for (const quarter in quarters) {
         const sales = quarters[quarter];
-        const totalSales = sales.reduce((acc, curr) => acc + curr, 0);
+        const totalSales = sales.reduce((acc, curr) => acc + (salesData[curr] || 0), 0);
         const averageSales = totalSales / sales.length;
-        analysis += `${quarter}: ${totalSales}, Average ${quarter}: ${averageSales}\n`;
+        analysis += `<li>Q${parseInt(quarter) + 1}: ${totalSales}, Average Q${parseInt(quarter) + 1}: ${averageSales}</li>`;
       }
+      analysis += "</ul>";
+
       // displaying data.
       document.getElementById("analysis").innerHTML = analysis;
     };
