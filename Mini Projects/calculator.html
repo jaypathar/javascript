@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sales Analysis</title>
+</head>
+
+<body>
+  <h1>Sales Analysis</h1>
+  <form>
+    <label for="month">Select a month:</label>
+    <select id="month">
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <br>
+    <label for="sales">Enter the sales value:</label>
+    <input type="number" id="sales" name="sales" min="0">
+    <br>
+    <button type="button" onclick="addSales()">Add Sales</button>
+    <button type="button" onclick="displaySalesAnalysis()">View Sales Analysis</button>
+  </form>
+  <!-- creating a div to display data -->
+  <div id="analysis"></div>
+  <script>
+    // array to store the monthly sales data for a year.
+    const salesData = [];
+
+    // function to submit the sales value for the selected month
+    const addSales = () => {
+      const month = document.getElementById("month").value;
+      const sales = parseFloat(document.getElementById("sales").value);
+
+      // validate the input to ensure the sales value is numeric and within a range.
+      if (!isNaN(sales) && sales >= 0) {
+        // calculate and store the sales value in the corresponding month slot in the sales data list.
+        salesData[month - 1] = sales;
+
+        // clear the form inputs
+        document.getElementById("month").selectedIndex = 0;
+        document.getElementById("sales").value = "";
+
+        // show a success message
+        alert("Sales value added successfully.");
+      } else {
+        alert("Invalid sales value. Please try again.");
+      }
+    };
+
+    // function to display the sales analysis by quarter 
+    const displaySalesAnalysis = () => {
+      let analysis = "<h2>Sales Analysis by Quarter:</h2><ul>";
+
+      const quarters = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]];
+
+      for (const quarter in quarters) {
+        const sales = quarters[quarter];
+        const totalSales = sales.reduce((acc, curr) => acc + (salesData[curr] || 0), 0);
+        const averageSales = totalSales / sales.length;
+        analysis += `<li>Q${parseInt(quarter) + 1}: ${totalSales}, Average Q${parseInt(quarter) + 1}: ${averageSales}</li>`;
+      }
+      analysis += "</ul>";
+
+      // displaying data.
+      document.getElementById("analysis").innerHTML = analysis;
+    };
+  </script>
+</body>
+
+</html>
